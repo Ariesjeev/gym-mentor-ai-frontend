@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta
+    name="description"
+    content="Gym Mentor AI — real-time AI workout coaching with pose detection, rep counting, form analysis and voice feedback."
+  />
+  <title>Gym Mentor AI — Real-time AI Workout Coach</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a class="nav-logo" href="#hero" aria-label="Gym Mentor AI home">
+      <span class="logo-bracket">(</span>GYM MENTOR AI<span class="logo-bracket">)</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#exercises">Exercises</a>
+      <a href="#demo">Demo</a>
+      <a href="#tech">Tech</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a
+      class="nav-cta"
+      href="https://gym-mentor-ai-jeevan-main.streamlit.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Launch App ↗</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+
+      <div class="hero-tag">
+        <span class="dot"></span>
+        AI-POWERED · REAL-TIME · PERSONAL COACH
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line-one">TRAIN SMARTER.</span>
+        <span class="line-two">MOVE <em>BETTER.</em></span>
+      </h1>
+
+      <p class="hero-sub">
+        Gym Mentor AI watches your movement through the camera, counts your reps,
+        checks exercise form and gives real-time visual + voice coaching.
+      </p>
+
+      <div class="hero-cta-row">
+        <a
+          href="https://gym-mentor-ai-jeevan-main.streamlit.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          <span>Try Gym Mentor AI</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="btn-ghost" href="#demo">WATCH THE DEMO ↓</a>
+      </div>
+
+      <div class="metrics-strip">
+        <div class="metric">
+          <span class="metric-val">5<span class="unit">+</span></span>
+          <span class="metric-label">Supported Exercises</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-val">24<span class="unit">/7</span></span>
+          <span class="metric-label">Coach Availability</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric">
+          <span class="metric-val">AI<span class="unit">+</span></span>
+          <span class="metric-label">Vision + Voice</span>
+        </div>
+      </div>
+
+      <div class="hero-preview" aria-label="Gym Mentor AI dashboard preview">
+        <div class="preview-header">
+          <div>
+            <span class="preview-kicker">LIVE SESSION</span>
+            <strong>Squats</strong>
+          </div>
+          <span class="live-pill"><span></span> LIVE</span>
+        </div>
+
+        <div class="preview-grid">
+          <div class="camera-panel">
+            <div class="camera-corner tl"></div>
+            <div class="camera-corner tr"></div>
+            <div class="camera-corner bl"></div>
+            <div class="camera-corner br"></div>
+
+            <img class="live-session-pose live-session-pose-hud" src="images/live-session-pose-hud.png"
+              alt="Squat pose detection showing back alignment, depth and knee angle analysis" />
+
+            <!-- <div class="skeleton">
+              <span class="joint j-head"></span>
+              <span class="joint j-neck"></span>
+              <span class="joint j-ls"></span>
+              <span class="joint j-rs"></span>
+              <span class="joint j-lh"></span>
+              <span class="joint j-rh"></span>
+              <span class="joint j-lk"></span>
+              <span class="joint j-rk"></span>
+              <span class="joint j-la"></span>
+              <span class="joint j-ra"></span>
+
+              <span class="bone b-a"></span>
+              <span class="bone b-b"></span>
+              <span class="bone b-c"></span>
+              <span class="bone b-d"></span>
+              <span class="bone b-e"></span>
+              <span class="bone b-f"></span>
+              <span class="bone b-g"></span>
+              <span class="bone b-h"></span>
+              <span class="bone b-i"></span>
+            </div> -->
+
+            <div class="pose-note">
+              <span class="mini-dot"></span>
+              POSE DETECTED
+            </div>
+          </div>
+
+          <div class="coach-panel">
+            <div class="coach-stat">
+              <span>REPS</span>
+              <strong>12</strong>
+            </div>
+            <div class="coach-stat">
+              <span>SET</span>
+              <strong>02<span>/03</span></strong>
+            </div>
+            <div class="coach-stat">
+              <span>PHASE</span>
+              <strong class="phase">LIFT</strong>
+            </div>
+
+            <div class="feedback-box">
+              <span class="feedback-label">AI COACH SAYS</span>
+              <p>Good depth. Keep your chest up on the next rep.</p>
+              <div class="voice-bar">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section features" id="features">
+      <div class="section-header center-header">
+        <span class="section-tag">// CORE FEATURES</span>
+        <h2 class="section-title">A coach that<br /><em>sees your movement</em></h2>
+        <p class="section-desc">
+          Designed around the parts of a workout that usually need the most attention:
+          movement quality, repetition tracking, consistency and feedback.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card feature-accent">
+          <span class="feature-index">01</span>
+          <span class="feature-icon">◎</span>
+          <h3>Pose Detection</h3>
+          <p>Tracks body landmarks from your camera feed for live exercise analysis.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <span class="feature-icon">↕</span>
+          <h3>Rep &amp; Set Tracking</h3>
+          <p>Counts completed repetitions and updates set progress during the workout.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <span class="feature-icon">◈</span>
+          <h3>Form Feedback</h3>
+          <p>Highlights movement problems and turns the analysis into actionable coaching.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">04</span>
+          <span class="feature-icon">◒</span>
+          <h3>Voice Coaching</h3>
+          <p>Use spoken feedback so you can keep training without staring at the screen.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">05</span>
+          <span class="feature-icon">⌁</span>
+          <h3>Workout History</h3>
+          <p>Keep a record of past workouts so your training sessions stay measurable.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">06</span>
+          <span class="feature-icon">✦</span>
+          <h3>AI Coach Layer</h3>
+          <p>AI-generated coaching turns raw exercise metrics into short, useful guidance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXERCISES -->
+    <section class="section exercises" id="exercises">
+      <div class="section-header">
+        <span class="section-tag">// EXERCISE LIBRARY</span>
+        <h2 class="section-title">Real movement.<br /><em>Real feedback.</em></h2>
+        <p class="section-desc left">
+          Each exercise uses the dedicated visual you provided, with lightweight AI-style overlays and exercise-specific metadata.
+        </p>
+      </div>
+
+      <div class="exercise-grid image-exercise-grid">
+        <article class="exercise-card image-exercise tilt-left">
+          <div class="exercise-image-wrap">
+            <img src="images/squat.png" alt="AI squat form analysis showing knee angle and straight back" />
+            <div class="image-vignette"></div>
+            <span class="exercise-badge">FORM ANALYSIS</span>
+            <!-- <span class="exercise-live">LIVE</span> -->
+            <div class="image-scan"></div>
+          </div>
+          <div class="exercise-copy">
+            <span>01 · LOWER BODY</span>
+            <h3>Squats</h3>
+            <p>Depth, alignment and repetition tracking.</p>
+            <div class="exercise-meta">
+              <span>90° knee angle</span>
+              <span>Back alignment</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exercise-card image-exercise">
+          <div class="exercise-image-wrap">
+            <img src="images/pushup.png" alt="AI push-up analysis showing straight body line and elbow angle" />
+            <div class="image-vignette"></div>
+            <span class="exercise-badge">LIVE COACH</span>
+            <!-- <span class="exercise-live">POSE</span> -->
+            <div class="image-scan"></div>
+          </div>
+          <div class="exercise-copy">
+            <span>02 · UPPER BODY</span>
+            <h3>Push-ups</h3>
+            <p>Movement phase and form feedback.</p>
+            <div class="exercise-meta">
+              <span>90° elbow angle</span>
+              <span>Body-line check</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exercise-card image-exercise tilt-right">
+          <div class="exercise-image-wrap">
+            <img src="images/bicep_curl.png" alt="AI biceps curl analysis showing fixed elbows and rep tracking" />
+            <div class="image-vignette"></div>
+            <span class="exercise-badge">REP COUNTER</span>
+            <!-- <span class="exercise-live">TRACK</span> -->
+            <div class="image-scan"></div>
+          </div>
+          <div class="exercise-copy">
+            <span>03 · ARMS</span>
+            <h3>Biceps Curls</h3>
+            <p>Controlled arm movement and reps.</p>
+            <div class="exercise-meta">
+              <span>Elbow stability</span>
+              <span>Range of motion</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exercise-card image-exercise tilt-right">
+          <div class="exercise-image-wrap">
+            <img src="images/shoulder_press.png" alt="AI shoulder press analysis showing full overhead extension" />
+            <div class="image-vignette"></div>
+            <span class="exercise-badge">ALIGNMENT</span>
+            <!-- <span class="exercise-live">CHECK</span> -->
+            <div class="image-scan"></div>
+          </div>
+          <div class="exercise-copy">
+            <span>04 · SHOULDERS</span>
+            <h3>Shoulder Press</h3>
+            <p>Pressing phase and posture monitoring.</p>
+            <div class="exercise-meta">
+              <span>Overhead extension</span>
+              <span>Posture check</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exercise-card image-exercise wide tilt-left">
+          <div class="exercise-image-wrap">
+            <img src="images/lunge.png" alt="AI lunge analysis showing upright torso and front knee position" />
+            <div class="image-vignette"></div>
+            <span class="exercise-badge">BALANCE CHECK</span>
+            <!-- <span class="exercise-live">AI</span> -->
+            <div class="image-scan"></div>
+          </div>
+          <div class="exercise-copy">
+            <span>05 · LOWER BODY</span>
+            <h3>Lunges</h3>
+            <p>Balance, stance and repetition tracking for each movement cycle.</p>
+            <div class="exercise-meta">
+              <span>Front-knee angle</span>
+              <span>Upright torso</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- NEW TYPE: AI FORM ANALYSIS BOARD -->
+      <!-- <div class="analysis-board">
+        <div class="analysis-board-copy">
+          <span class="section-tag">// NEW · AI FORM MAP</span>
+          <h3>One screen for<br /><em>movement intelligence</em></h3>
+          <p>
+            A new visual layer for your landing page: show pose detection,
+            form cues, rep metrics and coaching states together so visitors
+            immediately understand what Gym Mentor AI analyzes.
+          </p>
+          <div class="analysis-pills">
+            <span>POSE LANDMARKS</span>
+            <span>FORM SCORE</span>
+            <span>RANGE OF MOTION</span>
+            <span>REP / SET</span>
+            <span>VOICE FEEDBACK</span>
+          </div>
+          <a
+            href="https://gym-mentor-ai-jeevan-main.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary analysis-button"
+          >Try the live coach ↗</a>
+        </div>
+
+        <div class="analysis-board-image">
+          <img
+            src="images/ai-form-analysis-board.png"
+            alt="AI GYM Mentor form-analysis dashboard with five exercise panels and coaching metrics"
+          />
+          <span class="analysis-frame tl"></span>
+          <span class="analysis-frame tr"></span>
+          <span class="analysis-frame bl"></span>
+          <span class="analysis-frame br"></span>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section workflow" id="tech">
+      <div class="section-header center-header">
+        <span class="section-tag">// UNDER THE HOOD</span>
+        <h2 class="section-title">From camera<br /><em>to coaching</em></h2>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <span>01</span>
+          <strong>Camera</strong>
+          <small>Live browser video</small>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <span>02</span>
+          <strong>MediaPipe</strong>
+          <small>Pose landmarks</small>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <span>03</span>
+          <strong>Exercise Logic</strong>
+          <small>Angles + movement</small>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <span>04</span>
+          <strong>AI Coach</strong>
+          <small>Groq-powered feedback</small>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <span>05</span>
+          <strong>Voice</strong>
+          <small>Spoken guidance</small>
+        </div>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <span>COMPUTER VISION</span>
+          <strong>MediaPipe + OpenCV</strong>
+          <p>Pose landmarks, frame processing and exercise-specific movement analysis.</p>
+        </div>
+        <div class="stack-card">
+          <span>AI LAYER</span>
+          <strong>Groq / LLM Coaching</strong>
+          <p>Transforms exercise signals and form events into concise coaching feedback.</p>
+        </div>
+        <div class="stack-card">
+          <span>WEB EXPERIENCE</span>
+          <strong>Streamlit + WebRTC</strong>
+          <p>Interactive workout UI with browser camera access and real-time processing.</p>
+        </div>
+        <div class="stack-card">
+          <span>SESSION DATA</span>
+          <strong>Auth + History</strong>
+          <p>Login, workout state and historical sessions keep the training experience organized.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="section demo" id="demo">
+      <div class="section-header center-header">
+        <span class="section-tag">// LIVE DEMO</span>
+        <h2 class="section-title">See the coach<br /><em>in action</em></h2>
+        <p class="section-desc">
+          The button below opens the live Gym Mentor AI application
+          <!-- You can also drop
+          your own demo recording into  -->
+          <!-- <code>videos/gym-mentor-demo.mp4</code>. -->
+        </p>
+      </div>
+
+      <div class="demo-frame">
+        <div class="video-status">
+          <span class="dot"></span> LIVE DEMO
+        </div>
+
+        <div class="demo-corners">
+          <span class="tl"></span><span class="tr"></span>
+          <span class="bl"></span><span class="br"></span>
+        </div>
+
+        <div class="demo-placeholder" id="demoPlaceholder">
+          <div class="play-ring">
+            <div class="play-button">▶</div>
+          </div>
+          <span>YOUR GYM MENTOR AI DEMO VIDEO</span>
+          <!-- <small>Add <code>videos/gym-mentor-demo.mp4</code> to play it here.</small> -->
+          <a
+            class="btn-primary small-btn"
+            href="https://gym-mentor-ai-jeevan-main.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Open Live App ↗</a>
+        </div>
+
+        <video
+          id="demoVideo"
+          class="demo-video"
+          src="videos/gym-mentor-demo.mp4"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <span class="section-tag">// LET'S CONNECT</span>
+        <h2 class="contact-title">
+          Train with data.<br />
+          <em>Coach with AI.</em>
+        </h2>
+        <p class="contact-desc">
+          A real-time fitness coaching project combining computer vision,
+          exercise analysis, generative AI and voice feedback.
+        </p>
+        <!-- <p class="contact-desc">
+          Open to opportunities in ML engineering, computer vision, and AI
+          product roles.
+        </p> -->
+
+        <div class="social-grid">
+          <!-- <a
+            class="social-btn"
+            href="https://gym-mentor-ai-jeevan-main.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="social-icon">↗</span>
+            <span>Live App</span>
+          </a> -->
+          <a
+            href="https://www.linkedin.com/in/jeevan02/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"
+            aria-label="LinkedIn"
+          >
+            <span class="social-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </span>
+            <span class="social-label">LinkedIn</span>
+          </a>
+
+           <!-- GitHub -->
+          <a
+            href="https://github.com/Ariesjeev"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"
+            aria-label="GitHub"
+          >
+            <span class="social-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </span>
+            <span class="social-label">GitHub</span>
+          </a>
+
+          <!-- Twitter / X -->
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn"
+            aria-label="Twitter"
+          >
+            <span class="social-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </span>
+            <span class="social-label">Twitter</span>
+          </a>
+
+          <!-- Gmail -->
+          <a
+            href="sahoojeevanbikash@gmail.com"
+            class="social-btn"
+            aria-label="Email"
+          >
+            <span class="social-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="22"
+                height="22"
+              >
+                <path
+                  d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                />
+              </svg>
+            </span>
+            <span class="social-label">Gmail</span>
+          </a>
+
+          <!-- <a
+            class="social-btn"
+            href="https://github.com/Ariesjeev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="social-icon">⌘</span>
+            <span>GitHub</span>
+          </a>
+
+          <a
+            class="social-btn"
+            href="https://www.linkedin.com/in/Jeevan02"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="social-icon">in</span>
+            <span>LinkedIn</span>
+          </a> -->
+        </div>
+
+        <div class="footer">
+          <span>© 2026 Gym Mentor AI</span>
+          <span class="footer-mono">COMPUTER VISION · AI · VOICE · FITNESS</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
